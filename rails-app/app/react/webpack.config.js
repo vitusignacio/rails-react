@@ -3,7 +3,7 @@ var webpack = require('webpack');
 var CleanWebpackPlugin = require('clean-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-var assetsPath = __dirname + '/../assets/javascript/react';
+var assetsPath = __dirname + '/../assets/javascripts/react';
 
 var pathsToClean = [
   'dist',
