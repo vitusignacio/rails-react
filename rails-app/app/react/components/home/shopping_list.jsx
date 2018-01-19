@@ -1,15 +1,27 @@
 import uuidv1 from 'uuid/v1';
+import axios from 'axios';
 
 import styles from './home.scss';
 
-export default class ShoppingList extends React.Component {
+export class ShoppingList extends React.Component {
 
   constructor(props) {
     super(props);
+    let self = this;
 
     this.state = {
-      ShoppingListItems: [ 'meats', 'broccoli', 'apparatuses' ]
+      ShoppingListItems: []
     }
+
+    axios.get('/home/shopping_items')
+    .then(function (response) {
+      self.setState({
+        ShoppingListItems: response.data
+      });
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
   }
 
   itemClicked(item) {

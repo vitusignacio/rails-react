@@ -1,4 +1,4 @@
-import ShoppingList from './shopping_list';
+import { ShoppingList } from './shopping_list';
 
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
